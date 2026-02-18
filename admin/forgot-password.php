@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgot Password | OLLSMPC Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin-login.css">
+
+  <style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== VIDEO BACKGROUND ===== */
+.video-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== OVERLAY ===== */
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 30, 0.65);
+  z-index: 2;
+}
+
+/* ===== LOGIN WRAPPER ===== */
+.login-wrapper {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* ===== LOGIN CARD ===== */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+
+/* ===== HEADER ===== */
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header i {
+  font-size: 3rem;
+  color: #00c6ff;
+}
+
+.login-header h2 {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.login-header p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ===== FORM ===== */
+.form-group {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+.form-group i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #ccc;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 14px 14px 42px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== BUTTON ===== */
+.login-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 114, 255, 0.45);
+}
+
+/* ===== FOOTER ===== */
+.login-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 2rem;
+  }
+}
+.form-options {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.form-options a {
+  font-size: 0.85rem;
+  color: #9fdcff;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.form-options a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+
+<div class="video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="https://assets.mixkit.co/videos/229/229-720.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-overlay"></div>
+
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <div class="login-header">
+      <i class="bi bi-key-fill"></i>
+      <h2>Forgot Password</h2>
+      <p>Enter your admin email to reset access</p>
+    </div>
+
+    <form action="forgot-password-process.php" method="post">
+      <div class="form-group">
+        <i class="bi bi-envelope-fill"></i>
+        <input type="username" name="username" placeholder="Admin username" required>
+      </div>
+
+      <button type="submit" class="login-btn">
+        Send Reset Link <i class="bi bi-send-fill"></i>
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <a href="index.php">← Back to Login</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
